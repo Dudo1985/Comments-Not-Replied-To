@@ -1,0 +1,20 @@
+= 1.2.0 =
+
+* Add: The adopt-me tag
+
+= 1.1.1 =
+
+* Fix: PHP notice if $current_screen is not an object
+
+= 1.1.0 =
+* Adding support for the GitHub updater plugin
+* Moving the screenshot files to the `assets` directory for better practices
+* Updating the constant plugin version
+
+= 1.0.1 =
+* Removing a duplicate installation instruction in the README
+* Adding a plugin header image
+* Adding a constant definition for the plugin version
+
+= 1.0 =
+* Initial release

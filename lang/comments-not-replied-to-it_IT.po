@@ -1,0 +1,221 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Comments Not Replied To\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-06 10:47+0100\n"
+"PO-Revision-Date: 2021-11-06 10:51+0100\n"
+"Last-Translator: Tom McFarlin <tom@tommcfarlin.com>\n"
+"Language-Team: Dario Curvino\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+
+#: admin/CNRT_Admin.php:166
+msgid "Comment Reply"
+msgstr ""
+
+#: admin/CNRT_Admin.php:242
+msgid "Missing Reply"
+msgstr "Senza risposta"
+
+#: admin/CNRT_Admin.php:326 admin/CNRT_Settings.php:61
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: admin/CNRT_Admin.php:346
+msgid "Mark this comment as read"
+msgstr ""
+
+#: admin/CNRT_Admin.php:356
+msgid "Mark as read"
+msgstr ""
+
+#: admin/CNRT_Admin.php:475
+msgid "Not a comment"
+msgstr ""
+
+#: admin/CNRT_Admin.php:479
+msgid "No reply yet"
+msgstr ""
+
+#: admin/CNRT_Admin.php:484
+msgid "This comment is by the post author."
+msgstr ""
+
+#: admin/CNRT_Admin.php:489
+#, php-format
+msgid "This comment is by an %s"
+msgstr ""
+
+#: admin/CNRT_Admin.php:496
+msgid "The author has replied."
+msgstr "L'autore ha risposto."
+
+#: admin/CNRT_Admin.php:499
+#, php-format
+msgid "An %s has replied."
+msgstr ""
+
+#: admin/CNRT_Settings.php:10
+msgid "Save all settings"
+msgstr ""
+
+#: admin/CNRT_Settings.php:23
+msgid "Comments Not Replied To"
+msgstr ""
+
+#: admin/CNRT_Settings.php:42
+#, php-format
+msgid "Contact Us %s"
+msgstr ""
+
+#: admin/CNRT_Settings.php:76
+msgid "Comments Not Replied To: Settings"
+msgstr ""
+
+#: admin/CNRT_Settings.php:111
+msgid "Select when a comment should be marked as replied."
+msgstr ""
+
+#: admin/CNRT_Settings.php:115
+msgid "General settings"
+msgstr ""
+
+#: admin/CNRT_Settings.php:163
+msgid "Remove \"not replied\" status, when..."
+msgstr ""
+
+#: admin/CNRT_Settings.php:170
+msgid "Author has replied (default)"
+msgstr ""
+
+#: admin/CNRT_Settings.php:182
+msgid "An Admin has replied"
+msgstr ""
+
+#: admin/CNRT_Settings.php:194
+msgid "An Editor has replied"
+msgstr ""
+
+#: admin/CNRT_Settings.php:206
+msgid "Another Author has replied"
+msgstr ""
+
+#: admin/CNRT_Settings.php:263
+msgid "Upgrade to CNRT Pro"
+msgstr ""
+
+#: admin/CNRT_Settings.php:267
+msgid "Mark single comment as read"
+msgstr ""
+
+#: admin/CNRT_Settings.php:268
+msgid "User Reviews"
+msgstr ""
+
+#: admin/CNRT_Settings.php:269
+msgid "Priority support"
+msgstr ""
+
+#: admin/CNRT_Settings.php:274
+msgid "Upgrade Now"
+msgstr ""
+
+#: admin/CNRT_Settings.php:284
+msgid "Start Free Trial"
+msgstr ""
+
+#: admin/CNRT_Settings.php:287
+msgid "No credit-card, risk free!"
+msgstr ""
+
+#: admin/CNRT_Settings.php:303
+msgid ""
+"Coffee is vital to make \"Comments Not Replied To\" development going on!"
+msgstr ""
+
+#: admin/CNRT_Settings.php:306
+msgid ""
+"If you are enjoying CNRT, and you don't need the pro version, please "
+"consider to buy me a coffee, thanks!"
+msgstr ""
+
+#: admin/CNRT_Settings.php:309
+msgid "If you are enjoying CNRT, please consider to buy me a coffee, thanks!"
+msgstr ""
+
+#: admin/CNRT_Settings.php:314
+msgid "Buy me a coffee!"
+msgstr ""
+
+#: admin/CNRT_Settings.php:335
+msgid "Can I ask your help?"
+msgstr ""
+
+#: admin/CNRT_Settings.php:345
+msgid "Please rate \"Comment Not Replied\" To 5 stars on"
+msgstr ""
+
+#: admin/CNRT_Settings.php:348
+msgid " It will require just 1 min but it's a HUGE help for me. Thank you."
+msgstr ""
+
+#: admin/CNRT_Settings.php:365
+msgid "You may also like..."
+msgstr ""
+
+#: admin/CNRT_Settings.php:389
+msgid ""
+"Boost the way people interact with your site with an easy WordPress stars "
+"rating system! \n"
+"        With Schema.org rich snippets YASR will improve your SEO!"
+msgstr ""
+
+#: admin/CNRT_Settings.php:404
+msgid ""
+"Movie Helper allows you to easily add links to movie and tv shows, just by "
+"searching them while you're \n"
+"                writing your content. Search, click, done!"
+msgstr ""
+
+#: cnrt_pro/CNRT_pro.php:22
+msgid "You've unlocked this feature!"
+msgstr ""
+
+#: cnrt_pro/admin/CNRT_AdminPro.php:70
+msgid "Not enough privileges"
+msgstr ""
+
+#: cnrt_pro/admin/CNRT_AdminPro.php:78
+msgid "Invalid Data"
+msgstr ""
+
+#: cnrt_pro/admin/CNRT_AdminPro.php:82
+msgid "Invalid Nonces"
+msgstr ""
+
+#: cnrt_pro/admin/CNRT_AdminPro.php:122
+msgid "This comment has been marked as read"
+msgstr ""
+
+#: comments-not-replied-to.php:100
+msgid "Settings"
+msgstr ""
+
+#: comments-not-replied-to.php:112
+msgid "This feature is available only in the pro version"
+msgstr ""
+
+#~ msgid "This comment is by the author."
+#~ msgstr "Questo commento è dell'autore."
+
+#~ msgid "The author has not replied."
+#~ msgstr "L'autore non ha risposto."

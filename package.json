@@ -1,0 +1,36 @@
+{
+  "name": "comment-not-replied-to",
+  "version": "1.5.3",
+  "description": "=== CNRT - Comment Not Replied To === Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AXE284FYMNWDC Tags: ratings, rating, postrating, google rating, 5 star, review, reviews, star rating, vote, votes Requires at least: 4.3.0 Contributors: Dudo Tested up to: 5.0.2 Requires PHP: 5.3 Stable tag: 1.8.5 License URI: http://www.gnu.org/licenses/gpl-2.0.html",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pricing": "webpack --watch --config webpack-pricing.dev.js",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Dudo1985/Comments-Not-Replied-To.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "babel-preset-react-app": "^3.1.2",
+    "css-loader": "^5.0.0",
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "uuid": "^8.3.1"
+  }
+}
