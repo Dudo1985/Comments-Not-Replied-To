@@ -13,6 +13,9 @@ Easily see which comments have not received a reply yet.
 
 Simply put, "Comments Not Replied To" introduces a new area in the administrative dashboard that allows you to see what comments to which you - or someone else you can decide - have not yet replied.
 
+== GitHub ==
+* [Follow development on GitHub](https://github.com/Dudo1985/comments-not-replied-to)
+
 == Installation ==
 
 = In The WordPress Dashboard =
