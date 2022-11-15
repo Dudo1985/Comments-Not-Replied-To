@@ -1,0 +1,228 @@
+/*********** Settings Page **********/
+.form-table th {
+    border-right: 1px solid #ddd;
+}
+
+.cnrt-element-description {
+    color: #737272;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.cnrt-donate-title{
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.3em;
+    color: #23282d;
+    display: block;
+    font-weight: 600;
+}
+
+.cnrt-donate-content > p {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.cnrt-donate-title a:hover, a:visited, a:link, a:active{
+    text-decoration: none;
+}
+
+@media (min-width: 1177px) {
+    .cnrt-settingsdiv {
+        float: left;
+        display: block;
+        width: 65%;
+        background-color: #FFF;
+        border: 1px solid #DDD;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 10px;
+        min-height: 560px;
+    }
+
+    .cnrt-settingsdiv hr{
+        border-top: 3px solid #ddd;
+    }
+
+    .cnrt-donatedivdx {
+        float: right;
+        clear: right;
+        min-width: 250px;
+        width: 15%;
+        margin-bottom: 10px;
+        background-color: #FFF;
+        border: 1px solid #DDD;
+        padding: 20px;
+        font-size: 14px;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
+    }
+
+    .cnrt-donate-content {
+        text-align: center;
+    }
+
+}
+
+/*** Multi page rules ***/
+
+@media (max-width: 1176px) {
+    .cnrt-settingsdiv {
+        float: left;
+        width: 95%;
+        background-color: #FFF;
+        border: 1px solid #DDD;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 5px;
+    }
+
+    .cnrt-donatedivdx {
+        display: block !important;
+        width: 95%;
+        background-color: #FFF;
+        margin-top: 10px;
+        border: 1px solid #DDD;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .cnrt-settings-clear {
+        clear: both;
+        padding-bottom: 10px;
+    }
+
+    .cnrt-donate-left {
+        text-align: center;
+    }
+
+}
+
+
+.cnrt-onoffswitch-big {
+    position: relative;
+    width: 85px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.cnrt-onoffswitch-big-center{
+    margin: 0 auto;
+    text-align: left;
+}
+
+.cnrt-onoffswitch-checkbox {
+    display: none !important;
+}
+
+.cnrt-onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #FFFFFF;
+    border-radius: 35px;
+}
+
+.cnrt-onoffswitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.cnrt-onoffswitch-inner:before, .cnrt-onoffswitch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 18px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box !important; /*important for Gutenberg compatibility*/
+
+}
+
+.cnrt-onoffswitch-inner:before {
+    content: "YES";
+    padding-left: 9px;
+    background-color: #EEEEEE;
+    color: #34A7C1;
+}
+
+.cnrt-onoffswitch-inner:after {
+    content: "NO";
+    padding-right: 15px;
+    background-color: #EEEEEE;
+    color: #999999;
+    text-align: right;
+}
+
+.cnrt-onoffswitch-switch {
+    display: block;
+    width: 30px;
+    margin: 0px;
+    background: #A1A1A1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 51px;
+    border: 2px solid #FFFFFF;
+    border-radius: 35px;
+    transition: all 0.1s ease-in 0s;
+}
+
+.cnrt-onoffswitch-checkbox:checked + .cnrt-onoffswitch-label .cnrt-onoffswitch-inner {
+    margin-left: 0;
+}
+
+.cnrt-onoffswitch-checkbox:checked + .cnrt-onoffswitch-label .cnrt-onoffswitch-switch {
+    right: 0px;
+    background-color: #34A7C1;
+}
+
+.cnrt-group-checkboxes > label {
+    display: block;
+    margin: 0.2em;
+    cursor: pointer;
+    padding: 0.2em;
+}
+
+.cnrt-group-checkboxes > input[type=checkbox] {
+    display: none;
+}
+
+.cnrt-group-checkboxes > input[type=checkbox] + label:before {
+    content: "\2716";
+    border: 0.1em solid #000;
+    border-radius: 0.2em;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-right: 0.2em;
+    vertical-align: bottom;
+    color: transparent;
+    font-size: large;
+}
+
+.cnrt-group-checkboxes > input[type=checkbox]:checked + label:before {
+    background-color: #2ca02c;
+    border-color: #2ca02c;
+    color: #fff;
+}
+
+.cnrt-group-checkboxes > input[type=checkbox]:disabled + label:before {
+    border-color: #aaa;
+}
+
+.cnrt-group-checkboxes > input[type=checkbox]:checked:disabled + label:before {
+    background-color: rgba(139, 217, 139, 0.97);
+    border-color: rgba(165, 213, 165, 0.97);
+}
