@@ -1,9 +1,10 @@
 <?php
+
 /**
  * Plugin Name: Comments Not Replied To
  * Plugin URI: https://wordpress.org/plugins/comments-not-replied-to/
  * Description: Easily see which comments have not received a reply from each post's author.
- * Version: 1.5.3
+ * Version: 1.5.4
  * Text Domain: comments-not-replied-to
  * Domain Path: /lang
  * Author: Dario Curvino
