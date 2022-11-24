@@ -24,6 +24,9 @@ class commentsNotRepliedTo {
         //Init translations
         add_action('init', array($this, 'translate'));
 
+        //Customize optin image
+        cnrt_fs()->add_filter( 'plugin_icon' , array($this, 'changeIcon') );
+
         //once plugins are loaded, update version
         add_action('plugins_loaded', array($this, 'updateVersion'));
 
@@ -125,6 +128,17 @@ class commentsNotRepliedTo {
         if(CNRT_VERSION_INSTALLED === 0) {
             $this->install($network_wide);
         }
+    }
+
+    /**
+     * Change icon for optin form
+     *
+     * @author Dario Curvino <@dudo>
+     * @since  1.5.5
+     * @return string
+     */
+    public function changeIcon() {
+        return CNRT_ABSOLUTE_PATH . '/admin/img/comments-not-replied-to.png';
     }
 
     /**
