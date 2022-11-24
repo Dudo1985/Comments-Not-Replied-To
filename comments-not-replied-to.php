@@ -46,7 +46,7 @@ if ( ! function_exists( 'cnrt_fs' ) ) {
 
         if ( ! isset( $cnrt_fs ) ) {
             // Include Freemius SDK.
-            require_once __DIR__ . '/freemius/start.php';
+            require_once __DIR__ . '/vendor/freemius/wordpress-sdk/start.php';
 
             try {
                 $cnrt_fs = fs_dynamic_init(array(
