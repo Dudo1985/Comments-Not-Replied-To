@@ -55,8 +55,6 @@ if ( ! function_exists( 'cnrt_fs' ) ) {
                     'type'                => 'plugin',
                     'public_key'          => 'pk_a38e9e8391d7e26bcd8abfb2ba778',
                     'is_premium'          => true,
-                    // If your plugin is a serviceware, set this option to false.
-                    'has_premium_version' => true,
                     'has_addons'          => false,
                     'has_paid_plans'      => true,
                     'trial'               => array(
