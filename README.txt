@@ -3,7 +3,7 @@ Contributors: Dudo
 Tags: comments, comments reply, replied, not replied
 Requires at least: 3.5
 Tested up to: 6.1
-Stable tag: 1.5.5
+Stable tag: 1.5.6
 
 Easily see which comments have not received a reply yet.
 
@@ -39,6 +39,9 @@ Simply put, "Comments Not Replied To" introduces a new area in the administrativ
 3. Plugin page settings
 
 == Changelog ==
+
+= 1.5.6 =
+* Updated Freemius SDK to version 2.5.3, this fix a warning if PHP 8.1 is used
 
 = 1.5.5 =
 * Minor changes
