@@ -3,7 +3,7 @@ Contributors: Dudo
 Tags: comments, comments reply, replied, not replied
 Requires at least: 3.5
 Tested up to: 6.1
-Stable tag: 1.5.6
+Stable tag: 1.5.7
 
 Easily see which comments have not received a reply yet.
 

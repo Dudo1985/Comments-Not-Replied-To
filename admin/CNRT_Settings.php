@@ -381,9 +381,10 @@ class CNRT_Settings {
      * @since 1.0.0
      */
     private function alsoLike() {
+        add_thickbox();
         $text  = "<div class='cnrt-donatedivdx' id='alsolike'>";
         $text .= '<div class="cnrt-donate-title">' . esc_html__('You may also like...', 'comments-not-replied-to') .'</div>';
-        $text .= '<div class="cnrt-donate-content">';
+        $text .= '<div>';
         $text .= $this->yasr();
         $text .= '</p><hr />';
         $text .= $this->movieHelper();
@@ -420,17 +421,28 @@ class CNRT_Settings {
      * @return string
      */
     private function movieHelper() {
-        $movie_helper_description =
-            esc_html__('Movie Helper allows you to easily add links to movie and tv shows, just by searching them while you\'re 
-                writing your content. Search, click, done!',
-                'yet-another-stars-rating'
-            );
-        $text = '<a href="https://wordpress.org/plugins/yet-another-movie/" target="_blank">
-                    <img src="'.esc_url(CNRT_IMG_DIR_ADMIN).'/movie_helper.svg" alt="Movie Helper" >
-                  </a>';
-        $text .= '</a>';
-        $text .= '<p>';
+        $url = add_query_arg(
+            array(
+                'tab'       => 'plugin-information',
+                'plugin'    => 'yet-another-movie',
+                'TB_iframe' => 'true',
+                'width'     => '772',
+                'height'    => '670'
+            ),
+            network_admin_url( 'plugin-install.php' )
+        );
+
+        $movie_helper_description = esc_html__('Movie Helper allows you to easily add links to movie and tv shows, just by searching
+    them while you\'re writing your content. Search, click, done!', 'yet-another-stars-rating');
+        $text = '<h4>Movie Helper</h4>';
+        $text .= '<div style="margin-top: 15px;">';
         $text .= $movie_helper_description;
+        $text .= '</div>';
+        $text .= '<div style="margin-top: 15px;">
+                <a href="'. esc_url( $url ).'"
+                   class="install-now button thickbox open-plugin-details-modal"
+                   target="_blank">'. __( 'Install', 'yet-another-stars-rating' ).'</a>';
+        $text .= '</div>';
 
         return $text;
     }
