@@ -332,9 +332,9 @@ class CNRT_Settings {
 
         $div   = "<div class='cnrt-donatedivdx' id='cnrt-buy-cofee'>";
         $text  = '<div class="cnrt-donate-title">' . esc_html__('Buy me a coffee!', 'comments-not-replied-to') .'</div>';
-        $text .= '<div class="cnrt-donate-content">';
-        $text .= '<a href="https://www.paypal.com/donate/?hosted_button_id=SVTAVUF62QZ4W" target="_blank">
-                    <img src="'.CNRT_IMG_DIR_ADMIN.'/button_paypal.png" alt="paypal" width="200">
+        $text .= '<div>';
+        $text .= '<a href="https://ko-fi.com/L4L6HBQQ4" target="_blank">
+                    <img src="'.CNRT_IMG_DIR_ADMIN.'/kofi.png" alt="kofi" width="150">
                   </a>';
         $text .= '<p>';
         $text .= $buymecofeetext;
