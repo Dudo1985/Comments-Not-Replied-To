@@ -87,9 +87,6 @@ class CNRT_Settings {
             <div class="cnrt-settings-clear"></div>
             <?php $this->rightPanel(); ?>
         </div>
-
-
-
         <?php
     }
 
@@ -148,7 +145,6 @@ class CNRT_Settings {
         }
 
         $this->markAsRepliedHtml($array_roles);
-
     }
 
     /**
@@ -311,7 +307,6 @@ class CNRT_Settings {
             </div>
             <?php
         }
-
     }
 
     /**
