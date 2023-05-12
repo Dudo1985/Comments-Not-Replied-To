@@ -92,7 +92,7 @@ $cnrt_inc = new commentsNotRepliedTo;
 $cnrt_inc->init();
 
 if(is_admin()) {
-    $cnrt_admin = new CNRT_Admin();
+    $cnrt_admin = new Admin();
     $cnrt_admin->init();
 
     //this add a link under the plugin name, must be in the main plugin file

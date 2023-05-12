@@ -124,7 +124,7 @@ class CNRT_AdminPro {
 
         //reset property status
         $this->marked_as_read = null;
-        return CNRT_Admin::commentReplyGreenSpan(
+        return Admin::commentReplyGreenSpan(
             esc_html__('This comment has been marked as read', 'comments-not-replied-to')
         );
     }

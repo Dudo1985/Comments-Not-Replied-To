@@ -2,14 +2,12 @@
 
 namespace Dudo1985\CNRT;
 
-use Dudo1985\CNRT\CNRT_Settings as Settings;
-
 if (!defined('ABSPATH')) {
     exit('You\'re not allowed to see this page');
 } // Exit if accessed directly
 
 
-class CNRT_Admin {
+class Admin {
 
     private $comment_by_authorized;
     private $comment_childs;
