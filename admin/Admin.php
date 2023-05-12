@@ -1,10 +1,13 @@
 <?php
+
+namespace Dudo1985\CNRT;
+
 if (!defined('ABSPATH')) {
     exit('You\'re not allowed to see this page');
 } // Exit if accessed directly
 
 
-class CNRT_Admin {
+class Admin {
 
     private $comment_by_authorized;
     private $comment_childs;
@@ -17,8 +20,6 @@ class CNRT_Admin {
      * @since  1.4.0
      */
     public function init() {
-        $this->autoloadCNRTClasses();
-
         $this->settingsPage();
 
         add_action('admin_enqueue_scripts', array($this, 'enqueueScripts'));
@@ -40,6 +41,9 @@ class CNRT_Admin {
 
         //delete the comment_meta when a comment is deleted
         add_action('deleted_comment', array($this, 'deleteMetaKey'));
+
+        $user_page = new EditUser();
+        $user_page->init();
 
         //Filter the pricing page only if trial is not set
         if(isset($_GET['page']) && $_GET['page'] === 'cnrt_settings_page-pricing' && !isset($_GET['trial'])) {
@@ -65,39 +69,13 @@ class CNRT_Admin {
     }
 
     /**
-     * Autoload all classes inside admin/ that name contains movieHelper
-     *
-     * @author Dario Curvino <@dudo>
-     * @since  1.5.0
-     */
-    public function autoloadCNRTClasses() {
-        //AutoLoad MH Classes, only when a object is created
-        spl_autoload_register(static function($class) {
-            /**
-             * If the class being requested does not start with 'CNRT_' prefix,
-             * it's not in CNRT Project
-             */
-            if (0 !== strpos($class, 'CNRT_')) {
-                return;
-            }
-            $file_name = CNRT_ABSOLUTE_PATH_ADMIN . '/' . $class . '.php';
-
-            // check if file exists, just to be sure
-            if (file_exists($file_name)) {
-                require($file_name);
-            }
-        });
-    }
-
-    /**
      * Init settings page
      *
      * @author Dario Curvino <@dudo>
      * @since  1.5.0
      */
     public function settingsPage() {
-        //require 'CNRT_Settings.php';
-        $cnrt_settings = new CNRT_Settings();
+        $cnrt_settings = new Settings();
         $cnrt_settings->init();
     }
 

@@ -1,20 +1,18 @@
 <?php
+namespace Dudo1985\CNRT;
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit( 'You\'re not allowed to see this page' );
+} // Exit if accessed directly
 
 /**
  * @author Dario Curvino <@dudo>
- * @since 1.5.0
- * Class CNRT_AdminPro
+ * @since  1.5.7
  */
-class CNRT_AdminPro {
+
+class EditCommentsPro {
 
     private $marked_as_read;
-
-    /**
-     * Init Pro version of admin side stuff
-     *
-     * @author Dario Curvino <@dudo>
-     * @since 1.5.0
-     */
     public function init() {
         //enqueue js
         add_action('cnrt_enqueue_js', array($this, 'enqueueJs'));
@@ -24,9 +22,6 @@ class CNRT_AdminPro {
         add_filter('href_mark_as_read', array($this, 'overwriteMarkAsReadLink'), 10, 1);
 
         add_filter('cnrt_action_column_reply', array($this, 'checkIfMarkedAsReply'), 10, 1);
-
-        //filter menu to show contact link
-        cnrt_fs()->add_filter('is_submenu_visible', array($this, 'addContactLink'), 10, 2);
     }
 
     /**
@@ -121,20 +116,8 @@ class CNRT_AdminPro {
 
         //reset property status
         $this->marked_as_read = null;
-        return CNRT_Admin::commentReplyGreenSpan(
+        return Admin::commentReplyGreenSpan(
             esc_html__('This comment has been marked as read', 'comments-not-replied-to')
         );
-    }
-
-    public function addContactLink ($is_visible, $menu_id) {
-        if ('contact' !== $menu_id) {
-            return $is_visible;
-        }
-
-        if(cnrt_fs()->is_plan('pro') || cnrt_fs()->is_trial())  {
-            return cnrt_fs()->can_use_premium_code();
-        }
-
-        return null;
     }
 }

@@ -2,7 +2,8 @@
     "name": "dudo1985/comments-not-replied-to",
     "description": "\"Comments Not Replied To\" is a plugin that makes it easy to manage the comments on your blog, especially for those of you who have a significant amount of comments.\n",
     "require": {
-        "freemius/wordpress-sdk": "^2.5"
+        "freemius/wordpress-sdk": "^2.5",
+        "ext-json": "*"
     },
     "license": "GPL2",
     "authors": [
@@ -10,5 +11,10 @@
             "name": "Dudo1985",
             "email": "d.curvino@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Dudo1985\\CNRT\\": ["", "admin", "cnrt_pro", "cnrt_pro/admin"]
+        }
+    }
 }

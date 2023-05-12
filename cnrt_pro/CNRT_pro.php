@@ -1,5 +1,12 @@
 <?php
 
+namespace Dudo1985\CNRT;
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit( 'You\'re not allowed to see this page' );
+} // Exit if accessed directly
+
+
 /**
  * @author Dario Curvino <@dudo>
  * @since 1.5.0
@@ -26,8 +33,7 @@ class CNRT_pro {
 
         if(is_admin()) {
             //init admin pro
-            require CNRT_ABSOLUTE_PATH_ADMIN_PRO . '/CNRT_AdminPro.php';
-            $pro_version_admin = new CNRT_AdminPro();
+            $pro_version_admin = new AdminPro();
             $pro_version_admin->init();
         }
 
