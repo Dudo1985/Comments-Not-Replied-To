@@ -1,4 +1,7 @@
 <?php
+
+namespace Dudo1985\CNRT;
+
 /*
 
 Copyright 2020 Dario Curvino (email : d.curvino@tiscali.it)
