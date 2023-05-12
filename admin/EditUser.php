@@ -19,11 +19,18 @@ class EditUser {
     public function cnrtFields($profile_user) {
         ?>
         <br />
-        <h2>CNRT <?php esc_html__('settings') ?> </h2>
+        <h2>CNRT <?php echo esc_html__('settings') . CNRT_LOCKED_FEATURE ?> </h2>
         <table class="form-table" role="presentation">
             <tr>
+                <th>
+                    <label for="cnrt">
+                        <?php _e( 'Mark a comment as read when this user answer to a comment?' ); ?>
+                    </label>
+                </th>
                 <td>
                     <select name="cnrt" id="cnrt">
+                        <option>No</option>
+                        <option>Yes</option>
                     </select>
                 </td>
             </tr>
