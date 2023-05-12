@@ -113,11 +113,14 @@ add_action('init', function (){
     $text = esc_html__('This feature is available only in the pro version', 'comments-not-replied-to');
     $lockImage =
         apply_filters('cnrt_feature_locked',
-            '<a href="'.esc_url(cnrt_fs()->get_upgrade_url()).'">
-                <span class="dashicons dashicons-lock" title="'.esc_attr($text).'"></span>
-            </a>',
+            '<a style="text-decoration: none; color: inherit;" href="'.esc_url(cnrt_fs()->get_upgrade_url()).'">
+                        <span class="dashicons dashicons-lock" title="'.esc_attr($text).'"></span>
+                    </a>',
             10, 1);
     define ('CNRT_LOCKED_FEATURE', $lockImage);
+
+    $pro_version_enabled = apply_filters('cnrt_pro_version', false);
+    define ('CNRT_PRO_VERSION', $pro_version_enabled);
 });
 
 
