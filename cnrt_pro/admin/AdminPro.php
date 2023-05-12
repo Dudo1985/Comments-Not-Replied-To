@@ -8,7 +8,7 @@ namespace Dudo1985\CNRT;
  * @since 1.5.0
  * Class CNRT_AdminPro
  */
-class CNRT_AdminPro {
+class AdminPro {
 
     private $marked_as_read;
 

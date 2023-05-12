@@ -28,7 +28,7 @@ class CNRT_pro {
 
         if(is_admin()) {
             //init admin pro
-            $pro_version_admin = new CNRT_AdminPro();
+            $pro_version_admin = new AdminPro();
             $pro_version_admin->init();
         }
 
