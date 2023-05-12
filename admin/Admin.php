@@ -72,7 +72,7 @@ class Admin {
      * @since  1.5.0
      */
     public function settingsPage() {
-        $cnrt_settings = new CNRT_Settings();
+        $cnrt_settings = new Settings();
         $cnrt_settings->init();
     }
 

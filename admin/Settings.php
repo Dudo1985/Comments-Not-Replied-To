@@ -2,7 +2,7 @@
 
 namespace Dudo1985\CNRT;
 
-class CNRT_Settings {
+class Settings {
     public function init() {
         //hook to admin menu to add the link to the setting page
         add_action('admin_menu', array($this, 'addOptionsPageLink'));
