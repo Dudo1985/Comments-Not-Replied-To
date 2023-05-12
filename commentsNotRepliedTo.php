@@ -27,7 +27,7 @@ class commentsNotRepliedTo {
         add_action('init', array($this, 'translate'));
 
         //Customize optin image
-        cnrt_fs()->add_filter( 'plugin_icon' , array($this, 'changeIcon') );
+        cnrt_fs()->add_filter('plugin_icon' , array($this, 'changeIcon'));
 
         //once plugins are loaded, update version
         add_action('plugins_loaded', array($this, 'updateVersion'));
