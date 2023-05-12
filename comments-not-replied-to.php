@@ -1,5 +1,7 @@
 <?php
 
+namespace Dudo1985\CNRT;
+
 /**
  * Plugin Name: Comments Not Replied To
  * Plugin URI: https://wordpress.org/plugins/comments-not-replied-to/
@@ -84,12 +86,12 @@ if(!defined('CNRT_VERSION')) {
     define('CNRT_VERSION', '1.5.7');
 } // end if
 
-require 'commentsNotRepliedTo.php';
+require 'vendor/autoload.php';
+
 $cnrt_inc = new commentsNotRepliedTo;
 $cnrt_inc->init();
 
 if(is_admin()) {
-    require 'admin/CNRT_Admin.php';
     $cnrt_admin = new CNRT_Admin();
     $cnrt_admin->init();
 
@@ -122,7 +124,6 @@ add_action('init', function (){
 if (cnrt_fs()->is__premium_only()) { //these if can't be merged
     if (cnrt_fs()->can_use_premium_code()) {
         //Init CNRT Pro
-        require CNRT_ABSOLUTE_PATH . '/cnrt_pro/CNRT_pro.php';
         $pro_version = new CNRT_pro();
         $pro_version->init();
     }

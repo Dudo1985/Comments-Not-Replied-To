@@ -1,5 +1,7 @@
 <?php
 
+namespace Dudo1985\CNRT;
+
 class CNRT_Settings {
     public function init() {
         //hook to admin menu to add the link to the setting page

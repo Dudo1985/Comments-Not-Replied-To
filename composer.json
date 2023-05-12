@@ -10,5 +10,10 @@
             "name": "Dudo1985",
             "email": "d.curvino@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Dudo1985\\CNRT\\": ["", "admin", "cnrt_pro", "cnrt_pro/admin"]
+        }
+    }
 }

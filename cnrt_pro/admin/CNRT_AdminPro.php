@@ -1,5 +1,8 @@
 <?php
 
+namespace Dudo1985\CNRT;
+
+
 /**
  * @author Dario Curvino <@dudo>
  * @since 1.5.0
