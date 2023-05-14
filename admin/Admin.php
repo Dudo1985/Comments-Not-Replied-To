@@ -101,7 +101,7 @@ class Admin {
             return $actions;
         }
 
-        $custom_link = apply_filters('href_mark_as_read', $comment_id);
+        $custom_link = apply_filters('cnrt_href_mark_as_read', $comment_id);
 
         if($custom_link !== $comment_id) {
             $actions['cnrt'] = $custom_link;
