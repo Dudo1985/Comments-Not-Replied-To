@@ -34,9 +34,6 @@ class CNRT_pro {
             return true;
         });
 
-        //In user-edit page, change the select value in 'yes' if the current user can mark comment as read
-        add_filter('cnrt_user_edit_select', [$this, 'defaultSelectValue']);
-
         if(is_admin()) {
             //init admin pro
             $pro_version_admin = new AdminPro();
@@ -67,24 +64,6 @@ class CNRT_pro {
     }
 
     /**
-     * Callback for filter cnrt_user_edit_select
-     *
-     * @author Dario Curvino <@dudo>
-     *
-     * @since 1.5.7
-     *
-     * @param $user_id
-     *
-     * @return string|void
-     */
-    public function defaultSelectValue($user_id) {
-        $user_cap = $this->userCanMarkAsRead($user_id);
-        if($user_cap === 'yes') {
-            return 'yes';
-        }
-    }
-
-    /**
      * Return the value of user meta cnrt_user_can_mark_as_read
      *
      * @author Dario Curvino <@dudo>
@@ -95,7 +74,7 @@ class CNRT_pro {
      *
      * @return mixed
      */
-    public function userCanMarkAsRead($user_id) {
+    public static function userCanMarkAsRead($user_id) {
         return get_user_meta($user_id, 'cnrt_user_can_mark_as_read', true);
     }
 }
