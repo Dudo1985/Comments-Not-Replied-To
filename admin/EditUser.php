@@ -14,6 +14,7 @@ class EditUser {
     //hook into edit_user_profile to add new fields
     public function init() {
         add_action('edit_user_profile', [$this, 'cnrtFields']);
+        add_action('profile_update', [$this, 'onProfileUpdate']);
     }
 
     /**
@@ -43,7 +44,7 @@ class EditUser {
             <tr>
                 <th>
                     <label for="cnrt">
-                        <?php _e( 'Mark a comment as read when this user answer to a comment?' ); ?>
+                        <?php esc_html_e('Mark a comment as read when this user answer to a comment?'); ?>
                     </label>
                     <p class="description" style="font-weight: 400">
                         <?php echo wp_kses_post($desc_text) ?>
@@ -51,13 +52,32 @@ class EditUser {
                 </th>
                 <td>
                     <select name="cnrt" id="cnrt" <?php echo esc_attr($disabled) ?>>
-                        <option>No</option>
-                        <option>Yes</option>
+                        <option value="no"><?php esc_html_e('No', 'yet-another-stars-rating')?></option>
+                        <option value="yes"><?php esc_html_e('Yes', 'yet-another-stars-rating')?></option>
                     </select>
                 </td>
             </tr>
         </table>
         <?php
-
     }
+
+    /**
+     * Update user meta adding 'cnrt_user_can_answer
+     *
+     * @author Dario Curvino <@dudo>
+     *
+     * @since 1.5.7
+     *
+     * @param $user_id
+     *
+     * @return void
+     */
+    public function onProfileUpdate($user_id) {
+        if(isset($_POST['cnrt']) && $_POST['cnrt'] === 'yes') {
+            update_user_meta($user_id, 'cnrt_user_can_mark_as_read', 'yes');
+        } else {
+            delete_user_meta($user_id, 'cnrt_user_can_mark_as_read');
+        }
+    }
+
 }
