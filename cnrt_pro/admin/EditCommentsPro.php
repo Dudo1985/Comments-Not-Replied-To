@@ -116,7 +116,7 @@ class EditCommentsPro {
 
         //reset property status
         $this->marked_as_read = null;
-        return Admin::commentReplyGreenSpan(
+        return EditComments::commentReplyGreenSpan(
             esc_html__('This comment has been marked as read', 'comments-not-replied-to')
         );
     }

@@ -452,11 +452,11 @@ class Admin {
      */
     private function commentReplySpanAttributes ($comment_replied_by, $comment_is_child=false, $is_comment=true) {
         if($is_comment === false) {
-             return self::commentReplyGreenSpan(esc_html__('Not a comment', 'comments-not-replied-to'));
+             return EditComments::commentReplyGreenSpan(esc_html__('Not a comment', 'comments-not-replied-to'));
         }
 
         if($comment_replied_by === false) {
-             return self::commentReplyYellowSpan(esc_html__('No reply yet', 'comments-not-replied-to'));
+             return EditComments::commentReplyYellowSpan(esc_html__('No reply yet', 'comments-not-replied-to'));
         }
 
         if($comment_is_child === false) {
@@ -469,7 +469,7 @@ class Admin {
                      esc_html__('This comment is by an %s', 'comments-not-replied-to'), $comment_replied_by
                  );
             }
-            return self::commentReplyAuthorSpan($message);
+            return EditComments::commentReplyAuthorSpan($message);
         }
 
         if($comment_replied_by === 'post_author') {
@@ -479,62 +479,8 @@ class Admin {
             $message = sprintf(esc_html__('An %s has replied.', 'comments-not-replied-to'), $comment_replied_by);
         }
 
-        return self::commentReplyGreenSpan($message);
+        return EditComments::commentReplyGreenSpan($message);
 
-    }
-
-    /**
-     * Return attributes for green span
-     *
-     * @author Dario Curvino <@dudo>
-     * @since  1.5.0
-     *
-     * @param $message
-     *
-     * @return array
-     */
-    public static function commentReplyGreenSpan($message) {
-        $span_attributes['message']    = $message;
-        $span_attributes['icon']       = 'dashicons dashicons-yes-alt';
-        $span_attributes['icon_style'] = 'style="color:green"';
-
-        return $span_attributes;
-    }
-
-    /**
-     * Return attributes for yellow span
-     *
-     * @author Dario Curvino <@dudo>
-     * @since  1.5.0
-     *
-     * @param $message
-     *
-     * @return array
-     */
-    public static function commentReplyYellowSpan($message) {
-        $span_attributes['message']    = $message;
-        $span_attributes['icon']       = 'dashicons dashicons-welcome-comments';
-        $span_attributes['icon_style'] = 'style="color:#ec9b07"';
-
-        return $span_attributes;
-    }
-
-    /**
-     * Return attributes for author span
-     *
-     * @author Dario Curvino <@dudo>
-     * @since  1.5.0
-     *
-     * @param $message
-     *
-     * @return array
-     */
-    public static function commentReplyAuthorSpan($message) {
-        $span_attributes['message']    = $message;
-        $span_attributes['icon']       = 'dashicons dashicons-admin-users';
-        $span_attributes['icon_style'] = '';
-
-        return $span_attributes;
     }
 
     /**
