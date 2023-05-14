@@ -29,7 +29,17 @@ class EditUser {
      * @return void
      */
     public function cnrtFields($profile_user) {
+        $selected = '';
         if(CNRT_PRO_VERSION === true) {
+            /**
+             * Hook here to change the selected value
+             */
+            $current_user_can_mark_as_read = apply_filters('cnrt_user_edit_select', $profile_user->ID);
+
+            if($current_user_can_mark_as_read === 'yes') {
+                $selected = 'selected';
+            }
+
             $disabled  = '';
             $desc_text = '';
         } else {
@@ -53,7 +63,9 @@ class EditUser {
                 <td>
                     <select name="cnrt" id="cnrt" <?php echo esc_attr($disabled) ?>>
                         <option value="no"><?php esc_html_e('No', 'yet-another-stars-rating')?></option>
-                        <option value="yes"><?php esc_html_e('Yes', 'yet-another-stars-rating')?></option>
+                        <option value="yes" <?php echo esc_attr($selected) ?>>
+                            <?php esc_html_e('Yes', 'yet-another-stars-rating')?>
+                        </option>
                     </select>
                 </td>
             </tr>
