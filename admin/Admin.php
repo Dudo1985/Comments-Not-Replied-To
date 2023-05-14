@@ -3,9 +3,10 @@
 namespace Dudo1985\CNRT;
 
 /**
+ * Init all admin stuff
+ *
  * @author Dario Curvino <@dudo>
- * @since
- * @return
+ * @since 1.5.7
  */
 
 class Admin {
@@ -13,10 +14,24 @@ class Admin {
     public function init() {
         $this->settingsPage();
         $this->commentPage();
+        $this->userPage();
 
         add_action('admin_enqueue_scripts', array($this, 'enqueueScripts'));
+
+        //Filter the pricing page only if trial is not set
+        if(isset($_GET['page']) && $_GET['page'] === 'cnrt_settings_page-pricing' && !isset($_GET['trial'])) {
+            cnrt_fs()->add_filter( 'templates/pricing.php', array($this, 'pricingPageCallback') );
+        }
     }
 
+    /**
+     * Init method in edit comments page
+     *
+     * @author Dario Curvino <@dudo>
+     *
+     * @since  1.5.7
+     * @return void
+     */
     public function commentPage() {
         $cnrt_admin = new EditComments();
         $cnrt_admin->init();
@@ -31,6 +46,11 @@ class Admin {
     public function settingsPage() {
         $cnrt_settings = new SettingsPage();
         $cnrt_settings->init();
+    }
+
+    public function userPage() {
+        $user_page = new EditUser();
+        $user_page->init();
     }
 
     //$hook contain the current page in the admin side
@@ -111,5 +131,17 @@ class Admin {
             //use a constant to be sure that yasr-global-data is not loaded twice
             define ('CNRT_GLOBAL_DATA_EXISTS', true);
         }
+    }
+
+    /**
+     * @author Dario Curvino <@dudo>
+     * @since 1.5.0
+     */
+    public function pricingPageCallback() {
+        if (!current_user_can('manage_options')) {
+            wp_die(esc_html__('You do not have sufficient permissions to access this page.', 'yet-another-stars-rating'));
+        }
+
+        include(CNRT_ABSOLUTE_PATH_ADMIN . '/pricing-page.php');
     }
 }

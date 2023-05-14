@@ -38,13 +38,8 @@ class EditComments {
         //delete the comment_meta when a comment is deleted
         add_action('deleted_comment', array($this, 'deleteMetaKey'));
 
-        $user_page = new EditUser();
-        $user_page->init();
 
-        //Filter the pricing page only if trial is not set
-        if(isset($_GET['page']) && $_GET['page'] === 'cnrt_settings_page-pricing' && !isset($_GET['trial'])) {
-            cnrt_fs()->add_filter( 'templates/pricing.php', array($this, 'pricingPageCallback') );
-        }
+
     }
 
     /**
@@ -263,18 +258,6 @@ class EditComments {
      */
     public function deleteMetaKey($comment_id) {
         delete_comment_meta($comment_id, '_cnrt_missing');
-    }
-
-    /**
-     * @author Dario Curvino <@dudo>
-     * @since 1.5.0
-     */
-    public function pricingPageCallback() {
-        if (!current_user_can('manage_options')) {
-            wp_die(esc_html__('You do not have sufficient permissions to access this page.', 'yet-another-stars-rating'));
-        }
-
-        include(CNRT_ABSOLUTE_PATH_ADMIN . '/pricing-page.php');
     }
 
     /************************  HELPER FUNCTIONS BELOW THIS LINE  ************************/
