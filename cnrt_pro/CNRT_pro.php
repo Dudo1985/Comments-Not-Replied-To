@@ -58,19 +58,4 @@ class CNRT_pro {
         //js admin pro
         define('CNRT_JS_DIR_ADMIN_PRO', plugins_url() . '/' . CNRT_RELATIVE_PATH_PRO . '/admin/js/');
     }
-
-    /**
-     * Return the value of user meta cnrt_user_can_mark_as_read
-     *
-     * @author Dario Curvino <@dudo>
-     *
-     * @since 1.5.7
-     *
-     * @param $user_id
-     *
-     * @return mixed
-     */
-    public static function userCanMarkAsRead($user_id) {
-        return get_user_meta($user_id, 'cnrt_user_can_mark_as_read', true);
-    }
 }

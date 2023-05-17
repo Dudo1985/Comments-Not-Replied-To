@@ -14,7 +14,6 @@ class EditUser {
     //hook into edit_user_profile to add new fields
     public function init() {
         add_action('edit_user_profile', [$this, 'cnrtFields']);
-        add_action('profile_update', [$this, 'onProfileUpdate']);
     }
 
     /**
@@ -73,24 +72,4 @@ class EditUser {
         </table>
         <?php
     }
-
-    /**
-     * Update user meta adding 'cnrt_user_can_answer
-     *
-     * @author Dario Curvino <@dudo>
-     *
-     * @since 1.5.7
-     *
-     * @param $user_id
-     *
-     * @return void
-     */
-    public function onProfileUpdate($user_id) {
-        if(isset($_POST['cnrt']) && $_POST['cnrt'] === 'yes') {
-            update_user_meta($user_id, 'cnrt_user_can_mark_as_read', 'yes');
-        } else {
-            delete_user_meta($user_id, 'cnrt_user_can_mark_as_read');
-        }
-    }
-
 }

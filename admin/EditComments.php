@@ -53,7 +53,7 @@ class EditComments {
      * @return mixed
      */
     public function markAsReadLink ($actions, $comment) {
-        if(!current_user_can('activate_plugins')) {
+        if(!current_user_can('moderate_comments')) {
             return $actions;
         }
 
