@@ -30,10 +30,6 @@ class CNRT_pro {
             return '<span class="dashicons dashicons-unlock" title="'.esc_attr($text).'"></span>';
         }, 10, 1);
 
-        add_filter('cnrt_pro_version', static function() {
-            return true;
-        });
-
         if(is_admin()) {
             //init admin pro
             $pro_version_admin = new AdminPro();

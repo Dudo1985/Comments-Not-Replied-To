@@ -30,7 +30,10 @@ class EditUser {
      */
     public function cnrtFields($profile_user) {
         $selected = '';
-        if(CNRT_PRO_VERSION === true) {
+        $disabled = 'disabled';
+        $desc_text = esc_html__('This feature is available only in the pro version', 'comments-not-replied-to');
+        if (cnrt_fs()->is__premium_only()) { //these if can't be merged
+            if (cnrt_fs()->can_use_premium_code()) {
             /**
              * Hook here to change the selected value
              */
@@ -42,9 +45,7 @@ class EditUser {
 
             $disabled  = '';
             $desc_text = '';
-        } else {
-            $disabled = 'disabled';
-            $desc_text = esc_html__('This feature is available only in the pro version', 'comments-not-replied-to');
+            }
         }
 
         ?>

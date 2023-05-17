@@ -118,9 +118,6 @@ add_action('init', function (){
                     </a>',
             10, 1);
     define ('CNRT_LOCKED_FEATURE', $lockImage);
-
-    $pro_version_enabled = apply_filters('cnrt_pro_version', false);
-    define ('CNRT_PRO_VERSION', $pro_version_enabled);
 });
 
 
