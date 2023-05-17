@@ -34,17 +34,17 @@ class EditUser {
         $desc_text = esc_html__('This feature is available only in the pro version', 'comments-not-replied-to');
         if (cnrt_fs()->is__premium_only()) { //these if can't be merged
             if (cnrt_fs()->can_use_premium_code()) {
-            /**
-             * Hook here to change the selected value
-             */
-            $current_user_can_mark_as_read = apply_filters('cnrt_user_edit_select', $profile_user->ID);
+                /**
+                 * Hook here to change the selected value
+                 */
+                $current_user_can_mark_as_read = apply_filters('cnrt_user_edit_select', $profile_user->ID);
 
-            if($current_user_can_mark_as_read === 'yes') {
-                $selected = 'selected';
-            }
+                if($current_user_can_mark_as_read === 'yes') {
+                    $selected = 'selected';
+                }
 
-            $disabled  = '';
-            $desc_text = '';
+                $disabled  = '';
+                $desc_text = '';
             }
         }
 
