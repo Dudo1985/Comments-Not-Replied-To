@@ -264,7 +264,7 @@ class commentsNotRepliedTo {
      * @author Dario Curvino <@dudo>
      * @since 1.5.0
      *
-     * @param int   $comment_id    | id of content to retrive
+     * @param int   $comment_id    | id of content to retrieve
      *
      * @return false|string
      */
