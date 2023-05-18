@@ -1,12 +1,17 @@
 <?php
-/**
- * @author Dario Curvino <@dudo>
- * @since
- * @return
- */
-
 namespace Dudo1985\CNRT;
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit( 'You\'re not allowed to see this page' );
+} // Exit if accessed directly
+
+
+/**
+ * Action to do into user-edit.php, pro version
+ *
+ * @author Dario Curvino <@dudo>
+ * @since 1.5.7
+ */
 class EditUserPro {
     public function init() {
         //In user-edit page, change the select value in 'yes' if the current user can mark comment as read
