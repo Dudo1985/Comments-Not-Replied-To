@@ -120,7 +120,6 @@ class EditComments {
      * @return   void
      */
     public function missingReplyDisplay($column_name = '', $comment_id = 0) {
-
         // If we're looking at the 'Missing Reply' column...
         if ('missing-reply' !== trim($column_name)) {
             return;
