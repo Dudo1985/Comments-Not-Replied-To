@@ -28,7 +28,7 @@ class CNRT_pro {
         add_filter('cnrt_feature_locked', static function (){
             $text = esc_html__('You\'ve unlocked this feature!', 'yasr-pro');
             return '<span class="dashicons dashicons-unlock" title="'.esc_attr($text).'"></span>';
-        }, 10, 1);
+        });
 
 
         if(is_admin()) {

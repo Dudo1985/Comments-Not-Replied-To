@@ -19,9 +19,9 @@ class EditCommentsPro {
 
         add_action('wp_ajax_cnrt_mark_as_read', array($this, 'markCommentAsRead'));
 
-        add_filter('href_mark_as_read', array($this, 'overwriteMarkAsReadLink'), 10, 1);
+        add_filter('href_mark_as_read', array($this, 'overwriteMarkAsReadLink'));
 
-        add_filter('cnrt_action_column_reply', array($this, 'checkIfMarkedAsReply'), 10, 1);
+        add_filter('cnrt_action_column_reply', array($this, 'checkIfMarkedAsReply'));
     }
 
     /**

@@ -42,9 +42,6 @@ class Admin {
         //delete the comment_meta when a comment is deleted
         add_action('deleted_comment', array($this, 'deleteMetaKey'));
 
-        $user_page = new EditUser();
-        $user_page->init();
-
         //Filter the pricing page only if trial is not set
         if(isset($_GET['page']) && $_GET['page'] === 'cnrt_settings_page-pricing' && !isset($_GET['trial'])) {
             cnrt_fs()->add_filter( 'templates/pricing.php', array($this, 'pricingPageCallback') );
