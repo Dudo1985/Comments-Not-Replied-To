@@ -25,15 +25,15 @@ class EditUserPro {
      *
      * @author Dario Curvino <@dudo>
      *
-     * @since 1.5.7
+     * @since 1.5.8
      *
      * @param $user_id
      *
      * @return string|void
      */
     public function defaultSelectValue($user_id) {
-        $user = new \WP_User($user_id);
-        if($user->has_cap('moderate_comments')) {
+        $user_cap = AdminPro::userCanMarkAsRead($user_id);
+        if($user_cap === 'yes') {
             return 'yes';
         }
     }
@@ -50,11 +50,10 @@ class EditUserPro {
      * @return void
      */
     public function onProfileUpdate($user_id) {
-        $user = new \WP_User($user_id);
         if(isset($_POST['cnrt']) && $_POST['cnrt'] === 'yes') {
-            $user->add_cap('moderate_comments');
+            update_user_meta($user_id, 'cnrt_user_mark_as_read_answered', 'yes');
         } else {
-            $user->remove_cap('moderate_comments');
+            delete_user_meta($user_id, 'cnrt_user_mark_as_read_answered');
         }
     }
 }

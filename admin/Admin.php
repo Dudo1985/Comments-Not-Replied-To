@@ -17,7 +17,6 @@ class Admin {
         $this->userPage();
 
         add_action('admin_enqueue_scripts', [$this, 'enqueueScripts']);
-        add_action('admin_init', [$this, 'createCNRTRole']);
 
         //Filter the pricing page only if trial is not set
         if(isset($_GET['page']) && $_GET['page'] === 'cnrt_settings_page-pricing' && !isset($_GET['trial'])) {
@@ -132,23 +131,6 @@ class Admin {
             //use a constant to be sure that yasr-global-data is not loaded twice
             define ('CNRT_GLOBAL_DATA_EXISTS', true);
         }
-    }
-
-    /**
-     * Create a new site role
-     *
-     * @author Dario Curvino <@dudo>
-     *
-     * @since 1.5.8
-     * @return void
-     */
-    public function createCNRTRole() {
-        $role  = 'cnrt_moderator';
-        $label = 'CNRT Moderator';
-
-        add_role($role, $label,  [
-            'read'                 => true,
-        ]);
     }
 
     /**
