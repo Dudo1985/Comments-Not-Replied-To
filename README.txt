@@ -40,6 +40,9 @@ Simply put, "Comments Not Replied To" introduces a new area in the administrativ
 
 == Changelog ==
 
+= 1.5.8 =
+* Updated freemius sdk to version 2.5.10
+
 = 1.5.7 =
 * REFACTOR: The plugin has been refactored to use PHP Namespacing
 * TWEAKED: updated freemius SDK to version 2.5.8
