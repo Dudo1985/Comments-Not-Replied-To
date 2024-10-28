@@ -40,7 +40,7 @@ Simply put, "Comments Not Replied To" introduces a new area in the administrativ
 
 == Changelog ==
 
-= 1.5.9 =
+= 1.6.0 =
 * Updated freemius sdk to version 2.9.0
 
 = 1.5.9 =
