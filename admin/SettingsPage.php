@@ -9,7 +9,11 @@ class SettingsPage {
 
         add_action('admin_init', array($this, 'cnrtSettingsGroup')); //This is for general options
 
-        define('CNRT_SAVE_All_SETTINGS_TEXT', esc_html__('Save all settings', 'comments-not-replied-to'));
+        add_action('init', function() {
+            if (!defined('CNRT_SAVE_All_SETTINGS_TEXT')) {
+                define('CNRT_SAVE_All_SETTINGS_TEXT', esc_html__('Save all settings', 'comments-not-replied-to'));
+            }
+        });
     }
 
 
